@@ -1,0 +1,17 @@
+CREATE TABLE video_games (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, popular INTEGER, price INTEGER ) ; 
+
+INSERT INTO video_games VALUES (1, "Xbox", 25, 4, 60);
+INSERT INTO video_games VALUES (2, "PS5", 27, 3, 50); 
+INSERT INTO video_games VALUES (3, "Nintedo Switch", 22, 5, 30);
+INSERT INTO video_games VALUES (4, "Steam giftcards", 40, 2, 100);
+INSERT INTO video_games VALUES (5, "Other giftcards", 100, 1, 150);
+
+SELECT * from video_games; 
+--display the database ordered by price.
+SELECT * from video_games ORDER BY PRICE;
+
+--Items where price is 30 or over
+SELECT * from video_games WHERE price > 30 ORDER BY price;
+
+--What is the sum of all gift cards 
+SELECT popular, SUM(quantity) from video_games;
